@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "civo"
+version = "1.2.0"
+description = "Wrapper for Civo API"
+license = "MIT"
+authors = [{ name = "Alejandro JNM", email = "alejandrojnm@gmail.com" }]
+maintainers = [{ name = "Oscar L. Garcell", email = "ozkar.garcell@gmail.com" }]
+readme = "civo/README.rst"
+homepage = "https://github.com/civo/client-python"
+repository = "https://github.com/civo/client-python"
+keywords = ["civo", "cloud", "api"]
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Development Status :: 1.2.0",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[tool.poetry.urls]
+"Tracker" = "https://github.com/civo/client-python/issues"
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+httpx = "^0.20.0"
+python-dotenv = "^0.19.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+flake8 = "^4.0.1"
+black = "^21.9b0"
+isort = "^5.9.3"
+pytest-cov = "^3.0.0"
+commitizen = "^2.20.0"
+anyio = { extras = ["trio"], version = "^3.3.4" }
+unasync-cli = "^0.0.5"
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
