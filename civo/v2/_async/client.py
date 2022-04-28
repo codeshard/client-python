@@ -3,7 +3,7 @@ from typing import List
 
 from civo.v2.auth import CivoAuth
 from civo.v2.http_clients import AsyncClient
-from civo.v2.models import Regions
+from civo.v2.models import Quota, Regions
 from civo.v2.utils import validate_response
 from httpx._config import DEFAULT_TIMEOUT_CONFIG
 from httpx._types import TimeoutTypes
@@ -49,3 +49,12 @@ class AsyncCivoClient:
         r = await self.http_client.get("regions")
         validate_response(r)
         return Regions.from_json(r.json())
+
+    async def get_quota(self) -> Quota:
+        """
+        Function to get the quota
+        :return: object json
+        """
+        r = await self.http_client.get("quota")
+        validate_response(r)
+        return Quota.from_json(r.json())
