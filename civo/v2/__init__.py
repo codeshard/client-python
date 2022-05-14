@@ -1,4 +1,4 @@
-from ._async.client import AsyncCivoClient  # noqa: F401
+from .client import CivoSDK  # noqa: F401
 from .auth import CivoAuth  # noqa: F401
 from .errors import CivoError  # noqa: F401
 
