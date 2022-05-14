@@ -38,7 +38,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-httpx = "^0.20.0"
+requests = "^2.20.0"
 python-dotenv = "^0.19.1"
 python-dateutil = "^2.8.2"
 
