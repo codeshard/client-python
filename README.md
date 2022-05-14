@@ -42,41 +42,26 @@ This is Python SDK for the Civo Cloud Platform. First, you should get an API key
 
 ## Usage
 
-First, import the `AsyncCivoClient` (or `SyncCivoClient`) class and create your **Civo** asynchronous (or synchronous) client using the API key.
+First, import the `CivoSDK` class and create your **Civo** client using the API key.
 
 ```python
-from civo.v2 import AsyncCivoClient
+from civo.v2 import CivoSDK
 
-client = AsyncCivoClient(token="klEoWjEtDNsiusI38xGk9WZWeFnKrzECj1ZE9dwdK8nvcW1q")
+client = CivoSDK(token="klEoWjEtDNsiusI38xGk9WZWeFnKrzECj1ZE9dwdK8nvcW1q")
 ```
 
-It is also possible to use the `CivoAuth` class (which by default obtains its properties from environment variables or from the content of the `.env` file) and the static method `AsyncCivoClient.from_auth` (or `SyncCivoClient.from_auth`) to initialize the client.
+It is also possible to use the `CivoAuth` class (which by default obtains its properties from environment variables or from the content of the `.env` file) and the static method `CivoSDK.from_auth` to initialize the client.
 
 ```python
-from civo.v2 import AsyncCivoClient, CivoAuth
+from civo.v2 import CivoSDK, CivoAuth
 
-client = AsyncCivoClient.from_auth(CivoAuth())
-```
-
-The recommended way to use the Civo client is as context manager. For example:
-
-```python
-async with AsyncCivoClient(...) as client:
-    ...
-```
-
-or
-
-```python
-with SyncCivoClient(...) as client:
-    ...
+client = CivoSDK.from_auth(CivoAuth())
 ```
 
 ### Regions
 
 ```python
-async with AsyncCivoClient(...) as client:
-    regions = client.get_regions()
+regions = client.get_regions()
 ```
 
 Example response:
@@ -88,8 +73,7 @@ Regions(regions=[Region(code='NYC1', name='New York 1', type='civostack', defaul
 ### Quota
 
 ```python
-async with AsyncCivoClient(...) as client:
-    quota = client.get_quota()
+quota = client.get_quota()
 ```
 
 **[⬆ back to top](#table-of-contents)**
