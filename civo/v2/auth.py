@@ -9,8 +9,8 @@ load_dotenv()
 
 @dataclass
 class CivoAuth:
-    civo_token: str = field(default=environ["CIVO_TOKEN"])
+    api_token: str = field(default=environ["API_TOKEN"])
 
     def __post_init__(self):
-        if not self.civo_token:
-            raise CivoError(0, "CIVO_TOKEN not setted")
+        if not self.api_token:
+            raise CivoError(0, "API_TOKEN not setted")
