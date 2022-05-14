@@ -1,15 +1,7 @@
 from inspect import signature
 from typing import Any, Type, TypeVar
 
-from civo.v2.errors import CivoError
-from httpx import Response
-
 T = TypeVar("T")
-
-
-def validate_response(response: Response) -> None:
-    if response.status_code != 200:
-        raise CivoError(response.status_code)
 
 
 def parse_json(cls: Type[T], **json: Any) -> T:
