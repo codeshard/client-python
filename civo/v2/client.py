@@ -106,6 +106,9 @@ class CivoSDK:
                 "tags": tags,
             },
         )
+        if "id" not in response:
+            return CivoError(**response)
+        return Instance.from_json(response)
 
     @lru_cache()
     def get_regions(self) -> List[Regions]:
