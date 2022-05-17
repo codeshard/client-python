@@ -32,3 +32,17 @@ class SSH:
             keys.append(SSH.from_json(item))
         del json
         return parse_json(cls, keys=keys)
+
+
+@dataclass
+class SSHResponse:
+    id: UUID
+    result: str
+
+    def __post_init__(self):
+        self.id = UUID(str(self.id))
+        self.result = str(self.name)
+
+    @classmethod
+    def from_json(cls, json: Any) -> "SSHResponse":
+        return parse_json(cls, **json)
